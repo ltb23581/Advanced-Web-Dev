@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-image: url('/module1/project1/imgs/background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 18px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.header {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: calc(100% - 40px);
+    height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.headerLeft {
+    margin-right: auto;
+}
+
+.headerRight {
+    margin-left: auto;
+}
+
+.headerCenter {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header a:hover {
+    font-weight: bolder;
+    font-size: 21px;
+    color: rgb(120, 160, 173);
+}
+
+a:hover {
+    font-weight: bolder;
+    font-size: 18px;
+    color: rgb(120, 160, 173); 
+}
+
+.nav2 {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: -40px;
+    gap: 50px;
+}
+
+/* do later: redesing containers */
+.container1, .container2, .container3, .container4, .container5, .container6 {
+    margin-top: 50px;
+    width: calc(100% - 40px);
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+
+.title {
+    text-align: center; 
+    font-size: 20px; 
+    margin-bottom: 20px; 
+}
+
+.content_container {
+    display: flex; 
+    justify-content: center;
+    overflow-x: auto; 
+    gap: 50px; 
+}
+
+.exercise1, .exercise2, .exercise3, .exercise4, .exercise5 {
+    width: 300px; 
+    height: 310px;
+    padding: 10px; 
+    border-radius: 15px; 
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.exercise1 img, .exercise2 img, .exercise3 img, .exercise4 img, .exercise5 img {
+    max-width: 30%; 
+    height: auto; 
+    margin-bottom: 15px; 
+}
+
+.exercise1 h4, .exercise2 h4, .exercise3 h4, .exercise4 h4, .exercise5 h4 {
+    margin: 10px 0; 
+}
+
+.exercise1 p, .exercise2 p, .exercise3 p, .exercise4 p, .exercise5 p {
+    margin-top: 5px; 
+    font-size: 16px; 
+}
+
+.exercise1:hover, .exercise2:hover, .exercise3:hover, .exercise4:hover, .exercise5:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+}
+
+/* do later: fix proportions for smaller displays */
+@media (max-width: 1000px) {
+    .header {
+        width: calc(100% - 40px);
+        font-size: 90%;
+    }
+
+    .header, .headerCenter, .headerLeft, .headerRight {
+        gap: 10px;
+    } 
+}   

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Form Elements</title>
+</head>
+<body>
+    <header>
+        <h1>Form 2 - More Complex Form Elements</h1>
+    </header>
+
+    <main>
+        <form action="showme.html" method="get">
+            <!-- Dropdown Select Box -->
+            <label for="favoriteColor">Favorite Color:</label>
+            <select id="favoriteColor" name="favoriteColor" aria-label="Favorite Color">
+                <option value="" disabled selected>Select your favorite color</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+            </select>
+
+            <!-- Autocomplete Box -->
+            <label for="programmingLanguages">Language:</label>
+            <input list="languages" id="programmingLanguages" name="programmingLanguages" aria-label="Programming Languages">
+            <datalist id="languages">
+                <option value="Python"></option>
+                <option value="JavaScript"></option>
+                <option value="Java"></option>
+                <option value="C++"></option>
+            </datalist>
+            
+            <!-- Fieldset with Radio Buttons -->
+            <fieldset>
+                <legend>Favorite Development Platform:</legend>
+                <label for="web">Web</label>
+                <input type="radio" id="web" name="platform" value="web">
+
+                <label for="mobile">Mobile</label>
+                <input type="radio" id="mobile" name="platform" value="mobile">
+                
+                <label for="desktop">Desktop</label>
+                <input type="radio" id="desktop" name="platform" value="desktop">
+            </fieldset>
+            
+            <!-- Number Input Type -->
+            <label for="experience">Years of Programming Experience:</label>
+            <input type="number" id="experience" name="experience" min="0" step="1" aria-label="Years of Programming Experience">
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+</body>
+</html>

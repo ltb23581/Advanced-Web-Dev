@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* not sure how the placements were supposed to be */
+        div {
+            background-color: black;
+            border-radius: 50%;
+            float: left;
+            margin: 10px;
+            position: relative;
+        }
+        
+        .inner {
+            background-color: gray;
+            position: absolute;
+            top: 65%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+    </style>
+    <title>Asteroids Exercise</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+    <div id="astlist"></div>
+</body>
+<script>
+    let asteroidDisplay = document.querySelector('body'); 
+    
+    $(document).ready(function() {  
+        $.getJSON('https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=3jtevuvTnY2H45mL2LQwDsGEV5mnNkexG8YiUYSp', function(data) {   
+            let dataSource = data.near_earth_objects; 
+            for (var i = 0; i < dataSource.length; i++) {
+                let maxWidth = dataSource[i].estimated_diameter.kilometers.estimated_diameter_max * 10;
+                let minWidth = dataSource[i].estimated_diameter.kilometers.estimated_diameter_min * 10;
+                let isDangerous = dataSource[i].is_potentially_hazardous_asteroid;
+                
+                // Main circle for max diameter
+                let asteroidDiv = document.createElement('div');
+                asteroidDiv.style.width = maxWidth + "px";
+                asteroidDiv.style.height = maxWidth + "px";
+
+                // Add inner circle for min diameter
+                let innerDiv = document.createElement('div');
+                innerDiv.classList.add('inner');
+                innerDiv.style.width = minWidth + "px";
+                innerDiv.style.height = minWidth + "px";
+                
+                // Mark as dangerous if needed
+                if (isDangerous) {
+                    asteroidDiv.classList.add('dangerous');
+                }
+
+                asteroidDiv.appendChild(innerDiv);
+                asteroidDisplay.appendChild(asteroidDiv);
+            }
+        });
+    });
+</script>
+</html>
+
+

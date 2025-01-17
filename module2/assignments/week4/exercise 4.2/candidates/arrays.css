@@ -1,0 +1,36 @@
+body {
+    margin: 0; 
+    padding: 0; 
+}
+
+#alsoRan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px; 
+    padding: 10px;
+}
+
+.candidate {
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 10px; 
+    box-sizing: border-box;
+    max-width: 50%; 
+    margin: auto; 
+}
+
+.candidate img {
+    width: 100%; 
+    height: auto;
+    display: block; 
+}
+
+.candidate p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+

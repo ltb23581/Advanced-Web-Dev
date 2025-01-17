@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<!--
+    Prologue by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Change the color of a div with Event Handling</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body class="is-preload">
+
+        <!-- Header -->
+        <div id="header">
+            <div class="top">
+
+                <!-- Logo -->
+                <div id="logo">
+                    <span class="image avatar48"><img :src="avatar" alt="Avatar" /></span>
+                    <h1 id="title">{{ yourName }}</h1>
+                    <p>{{ description }}</p>
+                </div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#top" id="top-link"><span class="icon solid fa-home">{{ linkOne }}</span></a></li>
+                        <li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">{{ link2 }}</span></a></li>
+                        <li><a href="#about" id="about-link"><span class="icon solid fa-user">{{ link3 }}</span></a></li>
+                        <li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">{{ link4 }}</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="bottom">
+                <!-- Social Icons -->
+                <ul class="icons">
+                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                    <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                    <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Intro -->
+            <section id="top" class="one dark cover">
+                <div class="container">
+                    <header>
+                        <h2 class="alt">{{title}}</h2>
+                        <p>{{tagline}}</p>
+                    </header>
+                    <footer>
+                        <a href="#portfolio" class="button scrolly">{{buttonText}}</a>
+                    </footer>
+                </div>
+            </section>
+
+            <!-- Portfolio -->
+            <section id="portfolio" class="two">
+                <div class="container">
+                    <header>
+                        <h2>{{ portfolioTitle }}</h2>
+                    </header>
+                    <p>{{tagline}}</p>
+
+					<div class="row">
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="#" class="image fit"><img :src="image1" alt="" /></a>
+								<header>
+									<h3>{{ imgText1 }}</h3>
+								</header>
+							</article>
+							<article class="item">
+								<a href="#" class="image fit"><img :src="image2" alt="Image 2" /></a>
+								<header>
+									<h3>{{ imgText2 }}</h3>
+								</header>
+							</article>
+						</div>
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="#" class="image fit"><img :src="image3" alt="Image 3" /></a>
+								<header>
+									<h3>{{ imgText3 }}</h3>
+								</header>
+							</article>
+							<article class="item">
+								<a href="#" class="image fit"><img :src="image4" alt="Image 4" /></a>
+								<header>
+									<h3>{{ imgText4 }}</h3>
+								</header>
+							</article>
+						</div>
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="#" class="image fit"><img :src="image5" alt="Image 5" /></a>
+								<header>
+									<h3>{{ imgText5 }}</h3>
+								</header>
+							</article>
+							<article class="item">
+								<a href="#" class="image fit"><img :src="image6" alt="Image 6" /></a>
+								<header>
+									<h3>{{ imgText6 }}</h3>
+								</header>
+							</article>
+						</div>
+					</div>
+					
+                </div>
+            </section>
+
+            <!-- About Me -->
+            <section id="about" class="three">
+                <div class="container">
+                    <header>
+                        <h2>About Me</h2>
+                    </header>
+                    <a href="#" class="image featured"><img :src="aboutImage"alt="About Me Image" /></a>
+                    <p>{{aboutDescription}}</p>
+                </div>
+            </section>
+
+            <!-- List -->
+            <div id="list">
+                <div class="container">
+                <ol>
+                    <li v-for="restaurant in restaurants">{{ restaurant }}</li>
+                </ol>
+                </div>
+            </div>
+
+            <!-- Conditional Section -->
+            <div id="conditional">
+                <div class="container">
+                    <!-- <h2>Fill in the Blank</h2>
+                    <p>What is the name of your teacher?</p>
+                    <input v-model="teacherName" placeholder="Enter the teacher's name" />
+                    
+                    <p v-if="teacherName === 'Emuel'">Correct! The teacher's name is {{ teacherName }}.</p>
+                    <p v-if="teacherName !== 'Emuel' && teacherName !== ''">Not yet, keep trying.</p>
+                    <p v-if="teacherName === ''">Please enter the teacher's name.</p>
+
+                    <h2>Another Fill in the Blank</h2>
+                    <p>What is my favorite restaurant?</p>
+                    <input v-model="favoriteRestaurant" placeholder="Enter the restaurant's name" />
+                    <p v-if="restaurants.includes(favoriteRestaurant)">Correct! My favorite restaurant is {{ favoriteRestaurant }}.</p>
+                    <p v-if="favoriteRestaurant !== '' && !restaurants.includes(favoriteRestaurant)">Not quite, try again.</p> -->
+
+                    <p>NMI Instructor's Name: {{ teacherName }}</p>
+                    <p v-on:click="teacherName='John'">John</p>
+                    <p v-on:click="teacherName='Megan'">Megan</p>
+                    <p v-on:click="teacherName='Kyla'">Kyla</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="function">
+            <div id="divTest" :style="{ backgroundColor: bgColor, width: divWidth, height: '300px' }"></div>
+            <p v-for="color in colors" :key="color" @mouseover="changeColor(color)">
+                {{ color }}
+            </p>
+            <p v-for="width in widths" :key="width" @mouseover="changeWidth(width)">
+                {{ width }}
+            </p>
+        </div>
+        
+            <!-- Contact -->
+            <section id="contact" class="four">
+                <div class="container">
+                    <header>
+                        <h2>{{contactTitle}}</h2>
+                    </header>
+                    <p>{{contactDescription}}</p>
+
+                    <form method="post" action="#">
+                        <div class="row">
+                            <div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+                            <div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
+                            <div class="col-12">
+                                <textarea name="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <input type="submit" value="Send Message" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <div id="nav">
+                <p><a href="/module3/index.html">Click here to go home</a></p>
+            </div>
+        </div>
+  
+        <!-- Footer -->
+        <div id="footer">
+            <ul class="copyright">
+                <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/newVue.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
+

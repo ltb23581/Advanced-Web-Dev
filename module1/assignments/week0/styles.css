@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: myFont;
+}
+
+h1 {
+    font-weight: bolder;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0 0 0 lem;
+}
+
+ul li {
+    padding-left: 2rem;
+    background-image: url('images.jpeg');
+    background-position: 0 0;
+    background-size: 16px;
+    background-repeat: no-repeat;
+}
+
+ol li{
+    margin: 20px;
+}
+
+h4 a{
+    margin: 10px;
+    margin-bottom: -50px;
+    text-decoration: none;
+    color: black;    
+    border: 2px solid pink;  
+    border-radius: 8px;  
+    padding: 5px 10px;  
+    display: inline-block;
+}
+
+h4 a:hover{
+    background-color: pink;
+}
+
+h4 a:active{
+    color:lightseagreen;
+}
+
+h4 a:visited{
+    color: palevioletred;
+}
+
+h4 a:focus {
+    outline: 1px dashed black;  
+}
+
+@font-face {
+    font-family: "myFont";
+    src: url('myFont.otf')
+}
+

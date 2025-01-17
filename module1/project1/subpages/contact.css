@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-image: url('../imgs/background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+/* Header Styling */
+.header {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: calc(100% - 40px);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 20px;
+}
+
+.headerLeft {
+    margin-right: auto;
+}
+
+.headerRight {
+    margin-left: auto;
+}
+
+.headerCenter {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    font-weight: bolder;
+    font-size: 22px;
+    color: rgb(120, 160, 173);
+}
+
+/* Container for content and decoration */
+.container {
+    position: relative; 
+    margin: 150px auto;
+    max-width: 600px;
+}
+
+/* Contact Content Styling */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-content h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: rgb(255, 200, 200);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-form button:hover {
+    background-color: lightpink;
+}
+
+.decoration {
+    position: absolute; 
+    top: -90px;
+    left: 10px; 
+    z-index: 1000;
+}
+
+.decoration img {
+    width: 150px;
+    height: 150px;
+}
+
+@media (max-width: 1000px) {
+
+    .header {
+        width: calc(95% - 10%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90%;
+    }
+
+    .header, .headerCenter, .headerLeft, .headerRight {
+        gap: 10px;
+    } 
+
+}

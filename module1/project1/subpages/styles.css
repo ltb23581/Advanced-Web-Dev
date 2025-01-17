@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-image: url('../imgs/background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 18px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+.header {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: calc(100% - 40px);
+    height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.headerLeft {
+    margin-right: auto;
+}
+
+.headerRight {
+    margin-left: auto;
+}
+
+.headerCenter {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.header a:hover {
+    font-weight: bolder;
+    font-size: 22px;
+    color: rgb(120, 160, 173);
+}
+
+a:hover {
+    font-weight: bolder;
+    font-size: 20px;
+    color: rgb(120, 160, 173); 
+}
+
+.title {
+    position: relative; 
+    text-align: center; 
+    color: black; 
+    margin-top: 5%; 
+}
+
+.banner-container {
+    position: relative;
+}
+
+.banner {
+    width: 100%; 
+    height: auto; 
+}
+
+.title p {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-45%, -5%); 
+    font-size: 23px; 
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); 
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    height: calc(100vh - 45vh); /* Adjust to account for the header and title */
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 45vh); /* Adjust to account for the header and title */
+    place-items: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+.container1, .container2, .container3, .container4 {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: center;
+    padding: 10px; 
+    width: 400px; 
+    height: 320px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    border-radius: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.container1:hover, .container2:hover, .container3:hover, .container4:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+    }
+
+.htmlCSS, .jsAPI, .js3, .finalPNG {
+    border-radius: 20px;
+    width: 100%; 
+    height: auto; 
+    max-height: 250px; 
+    object-fit: cover; 
+}
+
+.container1 p, .container2 p, .container3 p, .container4 p {
+    margin-top: auto; 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 1700px) {
+
+}
+
+@media (max-width: 1000px) {
+    .content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .container1, .container2, .container3, .container4 {
+        width: 60%;
+        height: auto;
+    }
+
+    .header {
+        width: calc(95% - 10%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90%;
+    }
+
+    .header, .headerCenter, .headerLeft, .headerRight {
+        gap: 10px;
+    } 
+
+    .container1:hover, .container2:hover, .container3:hover, .container4:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+    }
+}

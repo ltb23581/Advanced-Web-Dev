@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Questions</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        #answer {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="qa()">Load New Question Set</button>
+    <div id="maindiv"></div>
+</body>
+
+</html>
+<script>
+    var divLoad = document.querySelector('#maindiv');
+    var theAnswer = [];
+
+    function qa() {
+        divLoad.innerHTML = "";
+        // http://jservice.io/api/random?count=10 did not work, so i'm assuming we're using the same API as exercise 9.2
+        $.getJSON('https://the-trivia-api.com/v2/questions', function(data) {
+            for (var i = 0; i < data.length; i++) {
+                divLoad.innerHTML += "<h3>Category: " + data[i].category + "</h3>"; 
+                divLoad.innerHTML += "<h3>" + data[i].question.text + "</h3>"; 
+                divLoad.innerHTML += "<div id='answer" + i + "'></div>";
+                divLoad.innerHTML += "<button onclick='showAnswer(" + i + ")'>Show Answer</button><br>";
+                
+                theAnswer.push(data[i].correctAnswer);
+            }
+        }).fail(function() {
+            divLoad.innerHTML = "<p>Error loading questions. Please try again.</p>";
+        });
+    }
+
+    function showAnswer(b) {
+        let whatever = document.querySelector("#answer" + b);
+        whatever.innerHTML = "<b>The answer is: " + theAnswer[b] + "</b>";
+    }
+</script>

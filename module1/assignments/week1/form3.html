@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 3 - Complex Form Elements</title>
+</head>
+<body>
+    <header>
+        <h1>Form 3 (with no CSS)</h1>
+    </header>
+
+    <main>
+        <form action="showme.html" method="get">
+            <!-- Slider Input -->
+            <label for="slider">Choose a max house price:</label>
+            <input type="range" id="slider" name="slider" min="0" max="10000000" value="0" oninput="outputUpdate(value)">
+            <output for="slider" id="volume">0</output>
+
+            <br>
+
+            <!-- Color Picker -->
+            <label for="colorPicker">Choose a color:</label>
+            <input type="color" id="colorPicker" name="colorPicker" value="#ff0000" oninput="colorUpdate(value)">
+            <span id="colorDisplay" style="display:inline-block; width: 50px; height: 20px; background-color: #ff0000;"></span>
+
+            <br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+    <script>
+        function outputUpdate(vol) {
+            document.querySelector('#volume').value = vol;
+        }
+        
+        function colorUpdate(color) {
+            document.querySelector('#colorDisplay').style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

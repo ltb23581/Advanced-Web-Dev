@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Teller</title>
+</head>
+<body>
+
+    <!-- no css added -->
+
+    <input type="text" id="namehere" placeholder="Your name here"><br>
+
+    <div class="result"></div>
+
+    <button onclick="fortune()">Your fortune</button>
+
+<script>
+    let outcomes = ["get a successful job", "win the lottery", "be homeless", "get into a car accident", "have eternal happiness"];
+
+    function fortune(){
+        let name = document.querySelector('#namehere').value;
+
+        let item = Math.floor(Math.random() * outcomes.length);
+
+        let result = document.querySelector('.result');
+        result.innerHTML = name + " your fortune is that you will " + outcomes[item];
+    }
+</script>
+</body>
+</html>

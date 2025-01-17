@@ -1,0 +1,27 @@
+body {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+}
+
+#alsoRan {
+    list-style-type: none; 
+}
+
+.candidate {
+    display: flex; 
+    align-items: center;
+    margin-bottom: 20px; 
+}
+
+.candidate img {
+    width: 100px; 
+    height: auto; 
+    margin-right: 15px; 
+}
+
+button {
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamboree Jukebox</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: -10px;
+        }
+
+        h6 {
+            font-weight: lighter;
+        }
+
+        .track {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            background-color: white;
+            transition: background-color 0.3s;
+            width: 300px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .track:hover {
+            background-color: #7a8da1;
+            color: white;
+            transform: translateY(-5px); 
+        }
+
+        #juke {
+            margin-top: 20px;
+            width: 300px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        button {
+            width: 70px;
+            height: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        button:hover{
+            background-color: #7a8da1;
+            transition: background-color 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jamboree Jukebox</h1>
+    <h6>(Apple Itunes API)</h6>
+    <input type="text" id="searchInput" placeholder="Input a song title" />
+    <button onclick="searchMusic()">Search</button>
+
+    <div id="results"></div>
+    <div id="juke"></div>
+
+    <script>
+        let resultsDiv = document.querySelector('#results');
+        let juke = document.querySelector('#juke');
+
+        function searchMusic() {
+            let query = document.getElementById('searchInput').value;
+            let url = `https://itunes.apple.com/search?term=${encodeURIComponent(query)}&entity=song&limit=10`;  // iTunes API
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    displayResults(data.results);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        function displayResults(tracks) {
+            resultsDiv.innerHTML = ''; 
+
+            tracks.forEach(track => {
+                let trackDiv = document.createElement('div');
+                trackDiv.className = 'track';
+                trackDiv.innerHTML = `
+                    <strong>${track.trackName}</strong><br>
+                    <small>${track.artistName}</small><br>
+                    <img src="${track.artworkUrl100}" alt="${track.trackName}" width="50">
+                `;
+
+                trackDiv.onclick = () => player(track.previewUrl);
+
+                resultsDiv.appendChild(trackDiv);
+            });
+        }
+
+        function player(tune) {
+            juke.innerHTML = `<audio controls autoplay src="${tune}" type='audio/m4a'></audio>`;
+        }
+    </script>
+</body>
+
+</html>

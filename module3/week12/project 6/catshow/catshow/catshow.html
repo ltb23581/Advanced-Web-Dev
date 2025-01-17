@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <style>
+        img {width: 500px;}
+        button{height: 30px; width: 80px; margin-left: 10px; background-color: grey;color:white; border-radius: 20px;border: solid black 1px;} 
+    </style>
+</head>
+
+<body>
+    
+    <div id="cat">
+        <div class="breed-buttons">
+            <button v-for="breed in breeds" 
+                    :key="breed.id" 
+                    @click="loadNextImage(breed.id)">
+                {{ breed.name }}
+            </button>
+        </div>
+        <h2>{{thename}}</h2>
+        <h2>Adaptability Score: {{adapt}}</h2>
+        <button v-on:click="slideshow()">next</button><br><br>
+   
+        <img :src="image.url"><br>
+
+        <h3>Description</h3>
+        <p>{{ description }}</p>
+        <h3>Temperament</h3>
+        <p>{{ temperament }}</p>
+        <h3>Origin</h3>
+        <p>{{ origin }}</p>
+
+    </div>
+
+   <!-- 
+This Vue instance works by creating an instance with properties `el`, `data`, `created`, and `methods`.
+
+1. `el`: This binds the Vue instance to the div, essentially linking it to the component's identifier.
+
+2. `data`: Contains global variables used throughout the Vue instance.
+
+3. `methods`: Stores the various functions, such as those for switching cat images.
+
+4. `created`: Runs when the instance is initialized, setting up the default cat (Abyssinian) for the slideshow.
+
+Inside the div:
+- Five buttons are displayed to allow navigation to different cat breeds.
+- These buttons are linked to predefined cat breeds in the `data` section.
+
+When a button is clicked:
+- The `loadNextImage` function runs, taking the clicked cat’s ID as a parameter.
+- This function fetches the cat's data from the API and stores it in a global variable.
+- The HTML then displays this fetched data by binding to the global variable, showing details about the selected cat.
+
+In short, this Vue instance displays cat information by default and allows switching between different cat breeds using buttons.
+-->
+
+</body>
+    <script src="catshow.js"></script>
+</html>

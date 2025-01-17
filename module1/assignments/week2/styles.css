@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Add white space */
+
+h1 {
+    text-transform: uppercase;
+    text-shadow: 2px 2px 1px rgb(201, 142, 169);
+    font-size: 2.5rem; /* Size in rem */
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem; /* Size in rem */
+}
+
+h3 {
+    font-size: 1.5rem; /* Size in rem */
+}
+
+p {
+    line-height: 1.5;
+    font-size: 1rem; /* Size in rem */
+}
+
+/* Applying white-space properties */
+.pre-line {
+    white-space: pre-line; /* Preserves new lines */
+}
+
+.pre-wrap {
+    white-space: pre-wrap; /* Preserves white space and wraps text */
+}

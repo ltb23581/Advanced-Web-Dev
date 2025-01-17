@@ -1,0 +1,246 @@
+/* remove later */
+h3 {
+    margin-top: 50px;
+    animation: rainbowText 5s linear infinite;
+}
+
+@keyframes rainbowText {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: green; }
+    57% { color: blue; }
+    71% { color: indigo; }
+    85% { color: violet; }
+    100% { color: red; }
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-image: url('../imgs/background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.header {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: calc(100% - 40px);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 20px;
+}
+
+.headerLeft {
+    margin-right: auto;
+}
+
+.headerRight {
+    margin-left: auto;
+}
+
+.headerCenter {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.headerCenter a:hover {
+    font-weight: bolder;
+    font-size: 21px;
+    color: rgb(120, 160, 173);
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.content {
+    margin-top: 20px;
+    width: 100%;
+    padding: 0 20px; /* Added padding to the content */
+}
+
+.row1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  
+    place-items: center;
+    padding: 20px;
+    align-items: center;
+    gap: 20px; /* Adjust the gap */
+    width: 100%; /* Ensure it takes the full width */
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+}
+
+.row23 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  
+    place-items: center;
+    padding: 20px;
+    align-items: center;
+    gap: 20px; /* Adjust the gap */
+    width: 100%; /* Ensure it takes the full width */
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+}
+
+.row4 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  
+    place-items: center;
+    padding: 20px;
+    align-items: center;
+    gap: 20px; /* Adjust the gap */
+    width: 100%; /* Ensure it takes the full width */
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+}
+
+.row5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    place-items: center;
+    padding: 20px;
+    align-items: center;
+    gap: 20px; /* Adjust the gap */
+    width: 100%; /* Ensure it takes the full width */
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+}
+
+
+
+/* Container styles */
+.container1, .container2, .container3, .container4,
+.container5, .container6, .container7, .container8,
+.container9, .container10, .container11, .container12,
+.container13, .container14, .container15, .container16 {
+    display: flex; 
+    align-items: center; 
+    text-align: center;
+    justify-content: center;
+    padding: 10px; 
+    width: 300px; 
+    height: 320px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+    border-radius: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+/* Hover effects */
+.container1:hover, .container2:hover, .container3:hover, .container4:hover,
+.container5:hover, .container6:hover, .container7:hover, .container8:hover,
+.container9:hover, .container10:hover, .container11:hover, .container12:hover,
+.container13:hover, .container14:hover, .container15:hover, .container16:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); 
+}
+
+.container1 img, .container2 img, .container3 img, .container4 img, .container5 img,
+.container6 img, .container7 img, .container8 img, .container9 img, .container10 img,
+.container11 img, .container12 img, .container13 img, .container14 img, .container15 img,
+.container16 img {
+    border-radius: 20px;
+    width: 100%; 
+    height: auto; 
+    max-height: 250px; 
+    object-fit: cover; 
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+    .header {
+        width: calc(95% - 10%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90%;
+    }
+
+    .header, .headerCenter, .headerLeft, .headerRight {
+        gap: 10px;
+    } 
+
+    .row1 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  
+        place-items: center;
+        padding: 20px;
+        align-items: center;
+        gap: 20px; /* Adjust the gap */
+        width: 100%; /* Ensure it takes the full width */
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+    }
+    
+    .row23 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  
+        place-items: center;
+        gap: 20px; /* Adjust the gap */
+        padding: 20px;
+        align-items: center;
+        width: 100%; /* Ensure it takes the full width */
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+    }
+    
+    .row4 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);  
+        place-items: center;
+        padding: 20px;
+        align-items: center;
+        gap: 20px; /* Adjust the gap */
+        width: 100%; /* Ensure it takes the full width */
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+    }
+    
+    .row5 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);  
+        place-items: center;
+        padding: 20px;
+        align-items: center;
+        gap: 20px; /* Adjust the gap */
+        width: 100%; /* Ensure it takes the full width */
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+    }
+    
+}
+

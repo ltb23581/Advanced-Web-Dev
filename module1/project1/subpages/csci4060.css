@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    background-image: url('../imgs/background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.header {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    width: calc(100% - 40px);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 0px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 20px;
+}
+
+.headerLeft {
+    margin-right: auto;
+}
+
+.headerRight {
+    margin-left: auto;
+}
+
+.headerCenter {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    font-weight: bolder;
+    font-size: 22px;
+    color: rgb(120, 160, 173);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.assignment {
+    display: flex;
+    flex-direction: column;
+}
+
+.title-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: relative;
+}
+
+.assignment-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.count-img, .trip-cost-img, .bill-for-meal {
+    max-width: 50%; 
+    height: auto;
+    margin-right: 20px;
+}
+
+.description-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.description {
+    margin-bottom: 10px;
+    max-width: 250px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.download-btn {
+    width: 50px;
+    height: 50px;
+    align-self: flex-end;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        width: calc(95% - 10%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90%;
+    }
+
+    .header, .headerCenter, .headerLeft, .headerRight {
+        gap: 10px;
+    } 
+    
+    .assignment-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .count-img, .trip-cost-img, .bill-for-meal {
+        max-width: 100%; /* Full width on smaller screens */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .description-and-button {
+        align-items: center;
+        text-align: center;
+    }
+
+    .download-btn {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <title>J Form Test</title>
+</head>
+<body>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="user_name">
+    <button id="clickme">Value</button>
+
+    <script>
+        // Step 1: Tie IDs to variables
+        var formVal = document.querySelector('#name');
+        var whichBut = document.querySelector("#clickme");
+
+        // Create the getVal function
+        function getVal() {
+            alert(formVal.value);
+        }
+
+        // Activate the getVal function when whichBut is clicked
+        whichBut.onclick = getVal;
+    </script>
+</body>
+</html>
